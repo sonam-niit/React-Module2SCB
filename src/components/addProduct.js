@@ -28,8 +28,8 @@ function AddProduct({addProduct}) {
         const errors= validateForm();
         if(Object.keys(errors).length===0){
             setValidationErrors({});
-            addProduct(product);
-            setProduct({name:'',price:'',description:'',rating:''})
+            addProduct(product);//add product to parent comp array
+            setProduct({name:'',price:'',description:'',rating:''})//to make the input fields empty again
         }else{
             setValidationErrors(errors);
         }

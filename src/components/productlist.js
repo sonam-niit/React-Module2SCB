@@ -19,7 +19,8 @@ function ProductList() {
   }
   const tabRow = products.map((item, index) => {
     return (
-      <tr key={index} onClick={() => onSelectItem(item)}>
+      <tr key={index} onClick={() => onSelectItem(item)}
+      className={`${item.rating>=4.5?('table-success'):('table-danger')}`}>
         <td>{item.id}</td>
         <td>{item.name}</td>
         <td>{item.price}</td>
@@ -32,7 +33,7 @@ function ProductList() {
     <div>
       <table className="table table-bordered table-hover">
         <thead>
-          <tr>
+          <tr className="table-dark">
             <th>ID</th>
             <th>Name</th>
             <th>Price</th>
@@ -44,7 +45,8 @@ function ProductList() {
       </table>
       <div className="row">
         <div className="col">
-          <AddProduct addProduct={addProduct} /> 
+          <AddProduct 
+          addProduct={addProduct} /> 
           {/* Passing function as a prop */}
         </div>
         <div className="col">
